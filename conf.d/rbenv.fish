@@ -8,16 +8,16 @@ if not command -s rbenv > /dev/null
     exit 1
 end
 
-set -l rbenv_root ''
+set --local rbenv_root ''
 if test -z "$RBENV_ROOT"
-    set rbenv_root "$HOME/.rbenv"
-    set -x RBENV_ROOT "$HOME/.rbenv"
+    set --local rbenv_root "$HOME/.rbenv"
+    set --export RBENV_ROOT "$HOME/.rbenv"
 else
-    set rbenv_root "$RBENV_ROOT"
+    set --local rbenv_root "$RBENV_ROOT"
 end
 
 fish_add_path $rbenv_root/shims
-set -x RBENV_SHELL fish
+set --export RBENV_SHELL fish
 if test ! -d "$rbenv_root/shims"; or test ! -d "$rbenv_root/versions"
     command mkdir -p $rbenv_root/{shims,versions}
 end
