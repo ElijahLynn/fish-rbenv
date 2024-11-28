@@ -1,3 +1,7 @@
+# add homebrew to path
+if test -d "/opt/homebrew/bin"
+    set --global --export PATH "/opt/homebrew/bin" $PATH
+end
 if not command -s rbenv > /dev/null
     echo "rbenv: command not found. See https://github.com/rbenv/rbenv"
     exit 1
