@@ -1,6 +1,6 @@
 # Rbenv
 
-[rbenv] plugin support for the fish shell.
+[rbenv] plugin support for the fish shell, with homebrew path support.
 
 ## Install
 
